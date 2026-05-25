@@ -1,0 +1,1 @@
+# yujui_jp_college
