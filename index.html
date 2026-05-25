@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四校 English Track 詳細介紹</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --warm: #f0ebe0;
+    --apu-c: #1d4e8f;
+    --apu-l: #d6e4f7;
+    --soka-c: #7b2d2d;
+    --soka-l: #f7e8e8;
+    --sophia-c: #1a5c3a;
+    --sophia-l: #e2f4ea;
+    --rikkyo-c: #5a3278;
+    --rikkyo-l: #ede4f5;
+    --gold: #b8860b;
+    --mid: #6b6258;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(255,255,255,.02) 40px, rgba(255,255,255,.02) 41px
+    );
+  }
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    position: relative;
+  }
+  header p {
+    margin-top: 10px;
+    font-size: .85rem;
+    color: rgba(255,255,255,.55);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .badge {
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,242,.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: .8rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    letter-spacing: .03em;
+    transition: all .2s;
+  }
+  nav a:hover { background: var(--warm); color: var(--ink); }
+  nav a.apu  { border-left: 3px solid var(--apu-c); }
+  nav a.soka { border-left: 3px solid var(--soka-c); }
+  nav a.sophia { border-left: 3px solid var(--sophia-c); }
+  nav a.rikkyo { border-left: 3px solid var(--rikkyo-c); }
+
+  /* ── MAIN ── */
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* ── SCHOOL CARD ── */
+  .school {
+    margin-bottom: 72px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,.07);
+  }
+  .school-header {
+    padding: 32px 36px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+  .school-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .school-header .en-name {
+    font-size: .85rem;
+    font-weight: 400;
+    opacity: .7;
+    margin-top: 4px;
+    letter-spacing: .02em;
+  }
+  .school-header .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag {
+    font-size: .72rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .degree-badge {
+    text-align: right;
+    font-size: .78rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    opacity: .75;
+    white-space: nowrap;
+  }
+  .degree-badge strong { display: block; font-size: 1.1rem; font-style: normal; }
+
+  .school-body { padding: 0 36px 36px; background: #fff; }
+
+  /* ── SECTION BLOCK ── */
+  .section { margin-top: 28px; }
+  .section-title {
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    border-bottom: 1px solid var(--warm);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+
+  /* ── PROGRAM GRID ── */
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .program-card {
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--warm);
+  }
+  .program-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .program-card p { font-size: .82rem; color: var(--mid); line-height: 1.6; }
+
+  /* ── PILLARS ── */
+  .pillars { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+  .pillar {
+    flex: 1 1 180px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: .83rem;
+  }
+  .pillar strong { display: block; font-weight: 600; margin-bottom: 4px; font-size: .88rem; }
+  .pillar ul { padding-left: 14px; color: var(--mid); }
+  .pillar ul li { margin-bottom: 2px; font-size: .79rem; }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; gap: 0; overflow-x: auto; padding-bottom: 4px; }
+  .timeline-year {
+    flex: 1;
+    min-width: 160px;
+    padding: 14px 16px;
+    border-right: 1px solid var(--warm);
+    font-size: .82rem;
+  }
+  .timeline-year:last-child { border-right: none; }
+  .timeline-year .yr {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+    opacity: .4;
+  }
+  .timeline-year ul { padding-left: 14px; }
+  .timeline-year ul li { margin-bottom: 4px; font-size: .79rem; color: var(--mid); }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .info-item {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: var(--warm);
+    font-size: .82rem;
+  }
+  .info-item .label {
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 4px;
+  }
+  .info-item .value { font-weight: 500; line-height: 1.5; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight {
+    padding: 14px 18px;
+    border-radius: 8px;
+    border-left: 3px solid;
+    font-size: .83rem;
+    line-height: 1.7;
+    margin-top: 10px;
+  }
+  .highlight strong { display: block; margin-bottom: 4px; font-size: .85rem; }
+
+  /* ── NOTICE ── */
+  .notice {
+    background: #fffbeb;
+    border: 1px solid #f0d070;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: .8rem;
+    color: #7a5c00;
+    margin-top: 16px;
+  }
+  .notice::before { content: '⚠️  '; }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-wrap { overflow-x: auto; margin-top: 56px; }
+  .compare-wrap h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+  thead th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 500;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+  thead th:first-child { border-radius: 6px 0 0 0; }
+  thead th:last-child { border-radius: 0 6px 0 0; }
+  tbody tr:nth-child(even) td { background: var(--warm); }
+  tbody td {
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  tbody td:first-child { font-weight: 600; white-space: nowrap; }
+
+  /* ── COLOR OVERRIDES per school ── */
+  .apu .school-header  { background: var(--apu-l); }
+  .apu .school-header h2 { color: var(--apu-c); }
+  .apu .tag { background: var(--apu-c); color: #fff; }
+  .apu .pillar { background: var(--apu-l); }
+  .apu .timeline-year .yr { color: var(--apu-c); opacity: .9; }
+  .apu .highlight { background: var(--apu-l); border-color: var(--apu-c); }
+  .apu .section-title { color: var(--apu-c); }
+
+  .soka .school-header  { background: var(--soka-l); }
+  .soka .school-header h2 { color: var(--soka-c); }
+  .soka .tag { background: var(--soka-c); color: #fff; }
+  .soka .pillar { background: var(--soka-l); }
+  .soka .timeline-year .yr { color: var(--soka-c); opacity: .9; }
+  .soka .highlight { background: var(--soka-l); border-color: var(--soka-c); }
+  .soka .section-title { color: var(--soka-c); }
+
+  .sophia .school-header  { background: var(--sophia-l); }
+  .sophia .school-header h2 { color: var(--sophia-c); }
+  .sophia .tag { background: var(--sophia-c); color: #fff; }
+  .sophia .pillar { background: var(--sophia-l); }
+  .sophia .timeline-year .yr { color: var(--sophia-c); opacity: .9; }
+  .sophia .highlight { background: var(--sophia-l); border-color: var(--sophia-c); }
+  .sophia .section-title { color: var(--sophia-c); }
+
+  .rikkyo .school-header  { background: var(--rikkyo-l); }
+  .rikkyo .school-header h2 { color: var(--rikkyo-c); }
+  .rikkyo .tag { background: var(--rikkyo-c); color: #fff; }
+  .rikkyo .pillar { background: var(--rikkyo-l); }
+  .rikkyo .timeline-year .yr { color: var(--rikkyo-c); opacity: .9; }
+  .rikkyo .highlight { background: var(--rikkyo-l); border-color: var(--rikkyo-c); }
+  .rikkyo .section-title { color: var(--rikkyo-c); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: .75rem;
+    color: var(--mid);
+    border-top: 1px solid var(--warm);
+  }
+
+  @media (max-width: 640px) {
+    header h1 { font-size: 1.8rem; }
+    .school-header { grid-template-columns: 1fr; }
+    .school-header, .school-body { padding-left: 20px; padding-right: 20px; }
+    .timeline { flex-direction: column; }
+    .timeline-year { border-right: none; border-bottom: 1px solid var(--warm); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>四校 English Track 詳細介紹</h1>
+  <p>資料經官方網站核實 · 適用 2025–2026 入學參考</p>
+  <div class="badge-row">
+    <span class="badge" style="background:var(--apu-c);color:#fff">APU</span>
+    <span class="badge" style="background:var(--soka-c);color:#fff">Soka FILA</span>
+    <span class="badge" style="background:var(--sophia-c);color:#fff">Sophia FLA</span>
+    <span class="badge" style="background:var(--rikkyo-c);color:#fff">Rikkyo GLAP</span>
+    <span class="badge" style="background:var(--rikkyo-c);color:#fff">Rikkyo Global Business</span>
+  </div>
+</header>
+
+<nav>
+  <a class="apu" href="#apu">APU</a>
+  <a class="soka" href="#soka">Soka FILA</a>
+  <a class="sophia" href="#sophia">Sophia FLA</a>
+  <a class="rikkyo" href="#rikkyo-glap">Rikkyo GLAP</a>
+  <a class="rikkyo" href="#rikkyo-gb">Rikkyo Global Business</a>
+  <a href="#compare">綜合比較表</a>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════ APU ═══════════════════════════ -->
+<section class="school apu" id="apu">
+  <div class="school-header">
+    <div>
+      <h2>立命館亞太大學</h2>
+      <div class="en-name">Ritsumeikan Asia Pacific University (APU)</div>
+      <div class="tags">
+        <span class="tag">AACSB 認證</span>
+        <span class="tag">AMBA 認證</span>
+        <span class="tag">全英語授課</span>
+        <span class="tag">大分 · 別府</span>
+      </div>
+    </div>
+    <div class="degree-badge">
+      授與學位<strong>BBA</strong>Bachelor of Business Administration
+    </div>
+  </div>
+  <div class="school-body">
+
+    <div class="section">
+      <div class="section-title">學院概覽</div>
+      <p>APU 的 <strong>College of International Management (APM)</strong> 是日本唯一同時具備 AACSB + AMBA 雙皇冠認證的大學部商管課程，且可完全以英語修讀。校園國際生比例約 50%，來自 90 餘國，多語言環境為日本頂尖。課程亦加入 UN PRME（責任管理教育原則）框架，強調永續商業倫理。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四大專攻領域（2023 年新課程）</div>
+      <div class="pillars">
+        <div class="pillar">
+          <strong>Accounting &amp; Finance</strong>
+          財務報表分析、企業金融、投資管理、審計<br>
+          <small style="color:var(--mid)">適合：金融業、會計師、顧問</small>
+        </div>
+        <div class="pillar">
+          <strong>Marketing</strong>
+          市場研究、消費者行為、品牌管理、數位行銷<br>
+          <small style="color:var(--mid)">適合：品牌、廣告、電商</small>
+        </div>
+        <div class="pillar">
+          <strong>Strategic Management &amp; Organization</strong>
+          策略規劃、組織行為、領導力、CSR<br>
+          <small style="color:var(--mid)">適合：管理職、家族企業接班</small>
+        </div>
+        <div class="pillar">
+          <strong>Innovation &amp; Economics</strong>
+          創業生態、新創商業模式、總體經濟應用<br>
+          <small style="color:var(--mid)">適合：創業、社會企業</small>
+        </div>
+      </div>
+      <div class="notice">2023 年課程改版後，舊名「Strategic Management and Leadership」及「Entrepreneurship and Operations Management」已更新為上列名稱，請勿混淆。</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四年學習流程</div>
+      <div class="timeline">
+        <div class="timeline-year">
+          <span class="yr">1年</span>
+          <ul>
+            <li>通識 Liberal Arts</li>
+            <li>APU Literacy（跨文化基礎）</li>
+            <li>語言課：英語 or 日語主軌</li>
+            <li>入門專業課（Introduction to Major）</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">2年</span>
+          <ul>
+            <li>選定 Area of Study</li>
+            <li>APM Common Subjects（跨領域必修）</li>
+            <li>開始修日語（如走英語主軌）</li>
+            <li>可跨學院選修</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">3年</span>
+          <ul>
+            <li>Seminar（小班研討，教授指導）</li>
+            <li>進階 Major Subjects</li>
+            <li>3年起可修日語授課專業科目</li>
+            <li>實習、海外交換機會</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">4年</span>
+          <ul>
+            <li>Advanced Seminar</li>
+            <li>畢業論文 / 研究專題</li>
+            <li>雙學位選項（如與法國 NEOMA）</li>
+            <li>124 學分達成即可畢業</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">申請資訊</div>
+      <div class="info-grid">
+        <div class="info-item"><div class="label">入學時期</div><div class="value">4 月（春）/ 10 月（秋）— 多期招生</div></div>
+        <div class="info-item"><div class="label">語言要求</div><div class="value">TOEFL iBT 72+ / IELTS 5.5+<br>（無 EJU 強制）</div></div>
+        <div class="info-item"><div class="label">申請材料</div><div class="value">成績單、個人陳述、推薦信、語言成績</div></div>
+        <div class="info-item"><div class="label">特色獎學金</div><div class="value">APU Entrance Scholarship（最高免學費）</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">適合對象 &amp; 就業優勢</div>
+      <div class="highlight">
+        <strong>最適合：想在亞太商業舞台發展、重視多元文化環境的學生</strong>
+        AACSB 雙認證在亞洲雇主中具備高度公信力。畢業生進入金融、顧問、商社、跨國企業比例高。Career Center 提供與 500+ 企業合作的就業媒合，校友超過 14,000 名遍布全球。需接受「非都市型」校園生活（大分縣別府市），生活費相對低廉。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════ SOKA FILA ═══════════════════════ -->
+<section class="school soka" id="soka">
+  <div class="school-header">
+    <div>
+      <h2>創價大學 FILA</h2>
+      <div class="en-name">Soka University · Faculty of International Liberal Arts</div>
+      <div class="tags">
+        <span class="tag">全英語授課</span>
+        <span class="tag">跨領域文理</span>
+        <span class="tag">東京八王子</span>
+        <span class="tag">2026年起課程改版</span>
+      </div>
+    </div>
+    <div class="degree-badge">
+      授與學位<strong>BA</strong>Bachelor of Arts in International Liberal Arts
+    </div>
+  </div>
+  <div class="school-body">
+
+    <div class="section">
+      <div class="section-title">學院概覽</div>
+      <p><strong>FILA（Faculty of International Liberal Arts）</strong> 是創價大學的全英語文理學院（2014 年創立），與商管學院 GPET 為完全獨立的兩個學院。FILA 強調跨領域視角分析全球議題，屬於「人文社會科學型」教育，包含相當程度的經濟與商管課程，但比重不如純商管學院。每年招收約 90 名學生（日本 + 國際生合計），為小規模精英設計。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三大學習領域（非四大，此為核實後正確版本）</div>
+      <div class="pillars">
+        <div class="pillar">
+          <strong>History &amp; Culture</strong>
+          歷史根源分析、文化社會現象<br>
+          <small style="color:var(--mid)">→ Global Ethics, Sociology of Globalization, Transnational Migration</small>
+        </div>
+        <div class="pillar">
+          <strong>Politics &amp; International Relations</strong>
+          國際衝突與合作、外交、全球治理<br>
+          <small style="color:var(--mid)">→ Comparative Politics, International Bargaining, Int'l Political Economy</small>
+        </div>
+        <div class="pillar">
+          <strong>Economics &amp; Business</strong>
+          全球經濟、商業實務<br>
+          <small style="color:var(--mid)">→ Principles of Economics, Development Economics, International Business, Marketing, Management Science</small>
+        </div>
+      </div>
+      <div class="notice">原始資料將 Education &amp; Psychology 列為第四領域，屬於錯誤。官方確認僅有以上三大領域，教育與心理相關課程分散於各領域中。</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四年學習流程</div>
+      <div class="timeline">
+        <div class="timeline-year">
+          <span class="yr">1年</span>
+          <ul>
+            <li>FILA Fundamental Courses（基礎英語學術技能）</li>
+            <li>Principles 入門課（跨三領域廣泛探索）</li>
+            <li>春假：海外短期研修（必修，前往 Global South 地區 2 週）</li>
+            <li>日語課程（選擇修日語 or 赴英語圈留學路徑）</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">2年</span>
+          <ul>
+            <li>持續廣度修課（各領域進階課）</li>
+            <li>馬來西亞 International Fieldwork（選修，2 週，4 學分）</li>
+            <li>Seminar I 開始報名</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">3年</span>
+          <ul>
+            <li>Seminar I–II（小班研討，約 5–6 人）</li>
+            <li>進階專門課（19 門可選）</li>
+            <li>確立 Capstone 研究方向</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">4年</span>
+          <ul>
+            <li>Seminar III（畢業研究）</li>
+            <li>Capstone Project（英語獨立研究論文）</li>
+            <li>GPA 2.0 以上即可畢業</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">核心必修技能課程（FILA Fundamental Courses）</div>
+      <div class="program-grid">
+        <div class="program-card">
+          <h4>學術英語系列</h4>
+          <p>Academic Foundations I/II、English for Academic Purposes I/II、Academic Writing — 培養批判閱讀、學術寫作、演說能力</p>
+        </div>
+        <div class="program-card">
+          <h4>跨文化溝通</h4>
+          <p>Cross-cultural Understanding — 跨文化互動能力，為海外實地研修做準備</p>
+        </div>
+        <div class="program-card">
+          <h4>資料與研究技能</h4>
+          <p>Foundations of Data Science、Statistics、Qualitative Research Methods — 文理兼修的研究方法基礎</p>
+        </div>
+        <div class="program-card">
+          <h4>實用日語（選擇路徑之一）</h4>
+          <p>入學時英語達 TOEFL iBT 80 / IELTS 6.5 者可選擇留在日本修日語，目標 JLPT N2</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">申請資訊</div>
+      <div class="info-grid">
+        <div class="info-item"><div class="label">入學時期</div><div class="value">4 月（春）/ 9 月（秋）兩期</div></div>
+        <div class="info-item"><div class="label">每年招生人數</div><div class="value">約 90 名（日 + 國際生合計）</div></div>
+        <div class="info-item"><div class="label">語言要求</div><div class="value">TOEFL iBT 80+ / IELTS 6.5+<br>（修日語路徑的門檻）</div></div>
+        <div class="info-item"><div class="label">獎學金</div><div class="value">最高可減免 80% 學費，年學費約 30 萬日圓起</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">適合對象 &amp; 就業優勢</div>
+      <div class="highlight">
+        <strong>最適合：喜歡跨領域思考、對全球議題（貧窮、移民、外交）有熱情，同時保有商管興趣的學生</strong>
+        FILA 畢業生就業率達 96%，進入日本全球企業、海外跨國公司、非營利組織，也有升讀日本及海外研究所的案例。學費為四校中最具競爭力（獎學金後可達極低水準）。
+      </div>
+      <div class="notice">注意：FILA 在 2026 學年度起將進行重大課程改版，有意 2026 年入學者應以最新版官方公告為準。</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SOPHIA FLA ════════════════════════ -->
+<section class="school sophia" id="sophia">
+  <div class="school-header">
+    <div>
+      <h2>上智大學 FLA</h2>
+      <div class="en-name">Sophia University · Faculty of Liberal Arts</div>
+      <div class="tags">
+        <span class="tag">全英語授課</span>
+        <span class="tag">文理融合</span>
+        <span class="tag">東京千代田區四谷</span>
+        <span class="tag">耶穌會傳統</span>
+      </div>
+    </div>
+    <div class="degree-badge">
+      授與學位<strong>BA</strong>Bachelor of Arts in Liberal Arts
+    </div>
+  </div>
+  <div class="school-body">
+
+    <div class="section">
+      <div class="section-title">學院概覽</div>
+      <p><strong>FLA（Faculty of Liberal Arts）</strong> 是日本最早設立的全英語大學部課程，師資多元（逾 50% 外籍教師），學生來自 50 餘國。四谷校區地處東京千代田區精華地段，距四ッ谷站步行 1 分鐘。課程採「先紮根、後專攻」模式，大一以 Core Program 建立批判思考與英語學術能力，大二下半才選定主修，確保學生充分探索後再做決定。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三大主修（大二下學期選定）</div>
+      <div class="pillars">
+        <div class="pillar">
+          <strong>International Business &amp; Economics (IBE) ★商管相關</strong>
+          基礎：個體/總體經濟、管理、行銷、會計、統計<br>
+          進階：國際貿易、國際金融、財務管理、產業組織論、消費者行為<br>
+          <small style="color:var(--mid)">→ 四校中商管內容最系統化的文理學院主修</small>
+        </div>
+        <div class="pillar">
+          <strong>Comparative Culture</strong>
+          藝術史 / 視覺文化、文學、宗教與哲學
+        </div>
+        <div class="pillar">
+          <strong>Social Studies</strong>
+          歷史、政治學、人類學-社會學（三個 Concentration 中選一主一副）
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四年學習流程</div>
+      <div class="timeline">
+        <div class="timeline-year">
+          <span class="yr">1年</span>
+          <ul>
+            <li>Core Program 全力投入</li>
+            <li>English Composition 序列課程</li>
+            <li>Public Speaking</li>
+            <li>Critical Thinking</li>
+            <li>General Studies 通識分配課（Society &amp; Culture / Cultural Traditions / Politics &amp; Economy）</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">2年前半</span>
+          <ul>
+            <li>持續 Core Program 要求</li>
+            <li>各主修入門課探索</li>
+            <li>Writing Center 輔助</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">2年後半起</span>
+          <ul>
+            <li>宣告主修（IBE / CC / SS）</li>
+            <li>主修基礎課程開始</li>
+            <li>跨主修選修持續</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">3–4年</span>
+          <ul>
+            <li>主修進階課（Advanced）</li>
+            <li>小班 Seminar</li>
+            <li>跨領域研究視角養成</li>
+            <li>畢業論文 / 研究報告</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">IBE 主修課程舉例</div>
+      <div class="program-grid">
+        <div class="program-card">
+          <h4>基礎課（1–2年級）</h4>
+          <p>Principles of Microeconomics、Macroeconomics、Principles of Management、Principles of Marketing、Accounting、Statistics</p>
+        </div>
+        <div class="program-card">
+          <h4>進階課（3–4年級）</h4>
+          <p>International Trade、International Finance、Financial Management、Industrial Organization、Consumer Behavior</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">申請資訊</div>
+      <div class="info-grid">
+        <div class="info-item"><div class="label">入學時期</div><div class="value">4 月（春）/ 9 月（秋）均可</div></div>
+        <div class="info-item"><div class="label">語言要求</div><div class="value">TOEFL iBT 88+ / IELTS 6.5+<br>（四校中英語門檻最高）</div></div>
+        <div class="info-item"><div class="label">日語要求</div><div class="value">無強制，但可選修日語課</div></div>
+        <div class="info-item"><div class="label">審查方式</div><div class="value">書類審查為主（無筆試、面試）</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">適合對象 &amp; 就業優勢</div>
+      <div class="highlight">
+        <strong>最適合：想在東京市中心學習、英語能力強、希望文理融合並深入商管的學生</strong>
+        上智 FLA 校友在外資金融、顧問、國際機構的進入比例相當高。四谷地段極佳，實習與就職活動交通便利。IBE 主修為四校文理學院中商管系統性最完整的選項，兼顧理論基礎與國際視野。TOEFL/IELTS 門檻是四校最高的，英語能力強者較有競爭優勢。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ RIKKYO ═══════════════════════════ -->
+<section class="school rikkyo" id="rikkyo-glap">
+  <div class="school-header">
+    <div>
+      <h2>立教大學 GLAP</h2>
+      <div class="en-name">Rikkyo University · Global Liberal Arts Program</div>
+      <div class="tags">
+        <span class="tag">全英語授課</span>
+        <span class="tag">必修一年海外交換</span>
+        <span class="tag">超小班制 ~30人/年</span>
+        <span class="tag">東京池袋</span>
+      </div>
+    </div>
+    <div class="degree-badge">
+      授與學位<strong>BA</strong>Bachelor of Arts（Liberal Arts）
+    </div>
+  </div>
+  <div class="school-body">
+
+    <div class="section">
+      <div class="section-title">學院概覽</div>
+      <p><strong>GLAP（Global Liberal Arts Program）</strong> 於 2017 年創立，每年僅招收約 30 名學生，是四校中規模最小的精英全英語課程。全程英語授課，強調批判思考與全球領導力。最大特色是<strong>大二秋學期開始必須在海外自由派大學（Liberal Arts College）交換整整一學年</strong>，並與立教國際宿舍生活相結合。課程設計依興趣可在三年級以後深化 Humanities、Citizenship 或 Business 領域。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三大選修深化領域（3年級以後）</div>
+      <div class="pillars">
+        <div class="pillar">
+          <strong>Business ★</strong>
+          從文理視角切入商管、策略、領導力，強調跨文化商業判斷力<br>
+          <small style="color:var(--mid)">非純商管課程，但具備全球商業所需的批判分析能力</small>
+        </div>
+        <div class="pillar">
+          <strong>Humanities</strong>
+          日本文學、文化、宗教、哲學等人文學科
+        </div>
+        <div class="pillar">
+          <strong>Citizenship</strong>
+          公民社會、CSR、可持續發展、全球議題
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四年學習流程</div>
+      <div class="timeline">
+        <div class="timeline-year">
+          <span class="yr">1年</span>
+          <ul>
+            <li>Tutorial（最多 5 人超小班）</li>
+            <li>English Liberal Arts (ELA) 廣域課程</li>
+            <li>GLP Core Course（領導力基礎）</li>
+            <li>與國際生同住宿舍</li>
+            <li>GL111 Leadership 實作課（與企業合作）</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">2年秋起</span>
+          <ul>
+            <li>赴海外自由派大學交換<strong>整整一學年</strong>（必修）</li>
+            <li>目的地：立教的夥伴 Liberal Arts College（美、英、澳等）</li>
+            <li>海外期間費用（寮費 + 機票）另計，約 150–350 萬日圓</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">3年</span>
+          <ul>
+            <li>回國後選定深化領域（Business / Humanities / Citizenship）</li>
+            <li>Global Studies Electives 選修</li>
+            <li>Seminar（小班研討）</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">4年</span>
+          <ul>
+            <li>Advanced Seminar</li>
+            <li>畢業論文 / Capstone</li>
+            <li>就職活動（Career Center 支援）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">申請資訊</div>
+      <div class="info-grid">
+        <div class="info-item"><div class="label">每年招生</div><div class="value">約 30 名（四校最少）</div></div>
+        <div class="info-item"><div class="label">入學時期</div><div class="value">4 月入學（一般為春學期）</div></div>
+        <div class="info-item"><div class="label">語言要求</div><div class="value">英語能力證明（TOEFL/IELTS）<br>須可全英語修課</div></div>
+        <div class="info-item"><div class="label">海外交換費用</div><div class="value">另計約 150–350 萬日圓<br>（視目的地與匯率而定）</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">適合對象 &amp; 就業優勢</div>
+      <div class="highlight">
+        <strong>最適合：渴望一年完整海外交換體驗、想深化全球領導力，且預算充足的學生</strong>
+        GLAP 畢業生具備一年海外自由派大學學習背景，在外資、國際機構的競爭力顯著。池袋校區交通優越，但海外交換的額外費用（150–350 萬日圓）是重要考量，建議提前規劃財務。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════ RIKKYO GLOBAL BUSINESS ════════════════ -->
+<section class="school rikkyo" id="rikkyo-gb" style="margin-top:-40px">
+  <div class="school-header">
+    <div>
+      <h2>立教大學 Global Business</h2>
+      <div class="en-name">Rikkyo University · College of Business, Department of Global Business</div>
+      <div class="tags">
+        <span class="tag">約 70% 英語授課</span>
+        <span class="tag">必修短期海外研修</span>
+        <span class="tag">5年制 BA+MA 選項</span>
+        <span class="tag">東京池袋</span>
+      </div>
+    </div>
+    <div class="degree-badge">
+      授與學位<strong>BA</strong>Bachelor of Business Administration<br><small style="font-style:italic;font-size:.75rem">（可選 5 年 BA+MA）</small>
+    </div>
+  </div>
+  <div class="school-body">
+
+    <div class="section">
+      <div class="section-title">學院概覽</div>
+      <p><strong>Department of Global Business</strong> 隸屬立教商學院（College of Business），以「培養英語流利的雙語全球商業領袖」為目標。約 70% 的專業課程以英語授課，課程架構圍繞三大核心方向，並要求所有學生在一年級暑假完成三週短期海外研修。學院具備 AACSB 認證（透過 MIB 研究所連結），企業合作課程豐富。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三大學習方向</div>
+      <div class="pillars">
+        <div class="pillar">
+          <strong>Global Business</strong>
+          國際商業實務、跨境經營、全球市場策略<br>
+          <small style="color:var(--mid)">含 Business Case Study 實作</small>
+        </div>
+        <div class="pillar">
+          <strong>International Finance</strong>
+          國際金融理論、企業財務、投資分析<br>
+          <small style="color:var(--mid)">含 Financial Markets 課程</small>
+        </div>
+        <div class="pillar">
+          <strong>Business &amp; Cross-cultural Communication</strong>
+          跨文化管理、商務溝通、談判技巧<br>
+          <small style="color:var(--mid)">含 Intercultural Management、Int'l Business Communication</small>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:var(--mid);margin-top:10px">⚠️ 注意：Department of Business（同學院另一系）的四大領域是 Marketing / Management / Communication / Accounting and Finance，與 Global Business 系不同，請勿混淆。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四年學習流程</div>
+      <div class="timeline">
+        <div class="timeline-year">
+          <span class="yr">1年</span>
+          <ul>
+            <li>商管入門課（英語基礎 + ESP 課程）</li>
+            <li>BLP（Business Leadership Program）</li>
+            <li>暑假：必修三週海外短期研修</li>
+            <li>Residential Orientation（住宿交流）</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">2年</span>
+          <ul>
+            <li>Sheltered Courses（英語輔助商管課）</li>
+            <li>企業參訪與案例分析</li>
+            <li>BLP 持續（領導力實作）</li>
+            <li>英語授課比重提升</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">3年</span>
+          <ul>
+            <li>Mainstream Courses（全英語主流課程）</li>
+            <li>Exchange / Internship 機會（約 20% 學生赴海外交換 6–12 個月）</li>
+            <li>Overseas Internship Program 選項</li>
+          </ul>
+        </div>
+        <div class="timeline-year">
+          <span class="yr">4年</span>
+          <ul>
+            <li>Advanced Seminar &amp; 畢業論文</li>
+            <li>就職活動（Career Center + 商學院雙重支援）</li>
+            <li>※ 5 年制 BA+MA 者繼續研究所</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">申請資訊</div>
+      <div class="info-grid">
+        <div class="info-item"><div class="label">入學時期</div><div class="value">4 月（春）入學</div></div>
+        <div class="info-item"><div class="label">語言要求</div><div class="value">英語能力證明（TOEFL/IELTS）<br>日語力亦有幫助</div></div>
+        <div class="info-item"><div class="label">加速 5 年制</div><div class="value">BA + Master of International Business (MIB)<br>高績效學生可申請</div></div>
+        <div class="info-item"><div class="label">AACSB</div><div class="value">College of Business 整體具備<br>AACSB 認證背書</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">適合對象 &amp; 就業優勢</div>
+      <div class="highlight">
+        <strong>最適合：想深入商管實務、重視英語商業技能、希望在東京就業的學生</strong>
+        立教商學院就業輔導資源豐富，Career Center 提供企業媒合、模擬面試、校友網絡等。約 70% 英語授課的設計讓學生循序漸進建立英語商業能力，不像 GLAP 需要立即完全英語環境。若目標是直接進入日本大企業（含外資），這是四選項中商管實務訓練最直接的路徑之一。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════ COMPARISON TABLE ═══════════════════ -->
+<div class="compare-wrap" id="compare">
+  <h2>綜合快速比較表</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th style="background:#1d4e8f">APU APM</th>
+        <th style="background:#7b2d2d">Soka FILA</th>
+        <th style="background:#1a5c3a">Sophia FLA</th>
+        <th style="background:#5a3278">Rikkyo GLAP</th>
+        <th style="background:#5a3278">Rikkyo Global Biz</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>授與學位</td>
+        <td>BBA</td>
+        <td>BA（Liberal Arts）</td>
+        <td>BA（Liberal Arts）</td>
+        <td>BA（Liberal Arts）</td>
+        <td>BBA（可+MIB）</td>
+      </tr>
+      <tr>
+        <td>授課語言</td>
+        <td>100% 英語<br>（可兼修日語）</td>
+        <td>100% 英語<br>（內建日語課）</td>
+        <td>100% 英語</td>
+        <td>100% 英語</td>
+        <td>約 70% 英語<br>30% 日語</td>
+      </tr>
+      <tr>
+        <td>商管比重</td>
+        <td>★★★★★<br>純商管</td>
+        <td>★★★☆☆<br>文理中含商管</td>
+        <td>★★★★☆<br>IBE 主修系統完整</td>
+        <td>★★★☆☆<br>文理視角切入商管</td>
+        <td>★★★★★<br>純商管</td>
+      </tr>
+      <tr>
+        <td>國際認證</td>
+        <td>AACSB + AMBA</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—<br>（GLAP 獨立課程）</td>
+        <td>AACSB<br>（College of Business）</td>
+      </tr>
+      <tr>
+        <td>校園地點</td>
+        <td>大分縣別府<br>（非都市）</td>
+        <td>東京八王子<br>（西郊）</td>
+        <td>東京千代田區<br>四谷（都心）</td>
+        <td>東京豐島區<br>池袋</td>
+        <td>東京豐島區<br>池袋</td>
+      </tr>
+      <tr>
+        <td>每年招生</td>
+        <td>約 500–600 名</td>
+        <td>約 90 名</td>
+        <td>未公開<br>（中型規模）</td>
+        <td>約 30 名<br>（四選項最少）</td>
+        <td>未公開<br>（中型規模）</td>
+      </tr>
+      <tr>
+        <td>必修海外體驗</td>
+        <td>非強制<br>（交換機會多）</td>
+        <td>1年春假 2 週<br>（必修，Global South）</td>
+        <td>非強制<br>（交換機會有）</td>
+        <td>大二起整整<br>一學年（必修）</td>
+        <td>1年暑假<br>3 週短期研修</td>
+      </tr>
+      <tr>
+        <td>英語門檻（入學）</td>
+        <td>TOEFL 72+<br>IELTS 5.5+（較寬鬆）</td>
+        <td>TOEFL 80+<br>IELTS 6.5+</td>
+        <td>TOEFL 88+<br>IELTS 6.5+（最高）</td>
+        <td>各校明定<br>英語能力</td>
+        <td>各校明定<br>英語能力</td>
+      </tr>
+      <tr>
+        <td>日語要求</td>
+        <td>無強制<br>（推薦邊學）</td>
+        <td>無強制<br>（日語路徑選修）</td>
+        <td>無強制</td>
+        <td>無強制</td>
+        <td>有幫助<br>（部分課日語）</td>
+      </tr>
+      <tr>
+        <td>主要就業方向</td>
+        <td>亞太跨國企業<br>金融、顧問、創業</td>
+        <td>全球企業、NGO<br>研究所升學</td>
+        <td>外資金融<br>顧問、國際機構</td>
+        <td>國際機構<br>外資、跨國企業</td>
+        <td>日商大企業<br>外資、雙語環境</td>
+      </tr>
+      <tr>
+        <td>學費水準</td>
+        <td>中等<br>（獎學金豐富）</td>
+        <td>最低<br>（獎學金後可達 30 萬/年）</td>
+        <td>中等</td>
+        <td>中等<br>＋海外費用另計</td>
+        <td>中等</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</main>
+
+<footer>
+  資料依各校官方網站核實整理 · APU 官網 / Soka FILA 官網 / Sophia FLA 官網 / Rikkyo 官網 · 2025–2026 入學參考用<br>
+  申請截止日與詳細要求每年調整，務必以各校招生辦公室公告為準
+</footer>
+
+</body>
+</html>
